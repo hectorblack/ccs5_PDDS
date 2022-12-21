@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F428678C-D0EC-4576-B5F3-F2536E5129DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WindowsApplication1.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsApplication1</RootNamespace>
+    <AssemblyName>PDDS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PDDS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PDDS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>PDDS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>PDDS.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\LOGO icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\..\Program Files\IBM\SQLLIB\BIN\netf40\IBM.Data.DB2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DSmainInterface\DSmain.Designer.vb">
+      <DependentUpon>DSmain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DSmainInterface\DSmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSmainInterface\DSinformation.Designer.vb">
+      <DependentUpon>DSinformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DSmainInterface\DSinformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSmainInterface\DSOrderReceipt.Designer.vb">
+      <DependentUpon>DSOrderReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DSmainInterface\DSOrderReceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSmainInterface\FrmDSOrders.Designer.vb">
+      <DependentUpon>FrmDSOrders.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DSmainInterface\FrmDSOrders.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSmainInterface\FrmDSPrintReciept.Designer.vb">
+      <DependentUpon>FrmDSPrintReciept.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DSmainInterface\FrmDSPrintReciept.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSmainInterface\FrmDSTracking.Designer.vb">
+      <DependentUpon>FrmDSTracking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DSmainInterface\FrmDSTracking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EAmainInterface\EAmainInterface.Designer.vb">
+      <DependentUpon>EAmainInterface.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EAmainInterface\EAmainInterface.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\Employee.Designer.vb">
+      <DependentUpon>Employee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Employee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\FrmAddEmployee.Designer.vb">
+      <DependentUpon>FrmAddEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\FrmAddEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\FrmUpdateEmployee.Designer.vb">
+      <DependentUpon>FrmUpdateEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\FrmUpdateEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceDrugStore\FrmMaintDS.Designer.vb">
+      <DependentUpon>FrmMaintDS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceDrugStore\FrmMaintDS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceDrugStore\FrmUpdateDS.Designer.vb">
+      <DependentUpon>FrmUpdateDS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceDrugStore\FrmUpdateDS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medications\FrmAddMS.Designer.vb">
+      <DependentUpon>FrmAddMS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Medications\FrmAddMS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medications\FrmMedications.Designer.vb">
+      <DependentUpon>FrmMedications.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Medications\FrmMedications.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medications\FrmUpdateMS.Designer.vb">
+      <DependentUpon>FrmUpdateMS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Medications\FrmUpdateMS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Pharmaceutical\FrmAddP.Designer.vb">
+      <DependentUpon>FrmAddP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmaceutical\FrmAddP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmaceutical\FrmPharmaceutical.Designer.vb">
+      <DependentUpon>FrmPharmaceutical.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmaceutical\FrmPharmaceutical.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pharmaceutical\FrmUpdateP.Designer.vb">
+      <DependentUpon>FrmUpdateP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pharmaceutical\FrmUpdateP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tracking Maintenance\FrmTrackingMaint.Designer.vb">
+      <DependentUpon>FrmTrackingMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tracking Maintenance\FrmTrackingMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction Maintenance\TransactMaint.Designer.vb">
+      <DependentUpon>TransactMaint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction Maintenance\TransactMaint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DSmainInterface\DSinformation.resx">
+      <DependentUpon>DSinformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSmainInterface\DSmain.resx">
+      <DependentUpon>DSmain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSmainInterface\DSOrderReceipt.resx">
+      <DependentUpon>DSOrderReceipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSmainInterface\FrmDSOrders.resx">
+      <DependentUpon>FrmDSOrders.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSmainInterface\FrmDSPrintReciept.resx">
+      <DependentUpon>FrmDSPrintReciept.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSmainInterface\FrmDSTracking.resx">
+      <DependentUpon>FrmDSTracking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EAmainInterface\EAmainInterface.resx">
+      <DependentUpon>EAmainInterface.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\Employee.resx">
+      <DependentUpon>Employee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\FrmAddEmployee.resx">
+      <DependentUpon>FrmAddEmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\FrmUpdateEmployee.resx">
+      <DependentUpon>FrmUpdateEmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceDrugStore\FrmMaintDS.resx">
+      <DependentUpon>FrmMaintDS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceDrugStore\FrmUpdateDS.resx">
+      <DependentUpon>FrmUpdateDS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medications\FrmAddMS.resx">
+      <DependentUpon>FrmAddMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medications\FrmMedications.resx">
+      <DependentUpon>FrmMedications.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medications\FrmUpdateMS.aa-DJ.resx">
+      <DependentUpon>FrmUpdateMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medications\FrmUpdateMS.resx">
+      <DependentUpon>FrmUpdateMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmaceutical\FrmAddP.resx">
+      <DependentUpon>FrmAddP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmaceutical\FrmPharmaceutical.resx">
+      <DependentUpon>FrmPharmaceutical.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pharmaceutical\FrmUpdateP.resx">
+      <DependentUpon>FrmUpdateP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tracking Maintenance\FrmTrackingMaint.resx">
+      <DependentUpon>FrmTrackingMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction Maintenance\TransactMaint.resx">
+      <DependentUpon>TransactMaint.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tracking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drugs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO THIS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beautiful-color-gradient-hues-backgrounds-abdcff-0396ff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factory %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factory %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile-user %281%29.png" />
+    <None Include="Resources\profile-user.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\tracking %281%29.png" />
+    <None Include="Resources\pharmacy %281%29.png" />
+    <None Include="Resources\businessman.png" />
+    <None Include="Resources\businessman %281%29.png" />
+    <None Include="Resources\drugs %281%29.png" />
+    <None Include="Resources\factory %283%29.png" />
+    <None Include="Resources\factory %282%29.png" />
+    <None Include="Resources\edit.png" />
+    <Content Include="Resources\factory1.png" />
+    <None Include="Resources\invoice %281%29.png" />
+    <Content Include="Resources\LOGO icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
